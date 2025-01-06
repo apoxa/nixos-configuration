@@ -59,5 +59,15 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
+  # Configure fail2ban
+  services.fail2ban = {
+    enable = true;
+    maxretry = 3;
+    bantime = "24h";
+    bantime-increment = {
+      enable = true;
+    };
+  };
+
   system.stateVersion = "24.11"; # Did you read the comment?
 }
